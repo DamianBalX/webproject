@@ -1,0 +1,244 @@
+/* Reset i podstawowe ustawienia */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  font-family: 'Satoshi', Arial, sans-serif;
+  background: #f5f7fa;
+  color: #222;
+}
+
+/* Kontener */
+.container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Nagłówek */
+header {
+  background: #68987C;
+  color: #fff;
+  padding: 24px 0 16px 0;
+  box-shadow: 0 2px 8px #0001;
+}
+
+.header__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__info {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.header__logo {
+  height: 80px;
+  width: auto;
+}
+
+.header__title {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.header__icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+
+
+.header__subtitle {
+  font-size: 15px;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+#header__icon {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background: #fff2;
+  padding: 4px;
+}
+
+/* Główna część strony */
+.content__row {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin: 48px auto;
+}
+
+.content__column {
+  background: #F6F5F3;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px #0002;
+  flex: 1 1 0;
+  max-width: 400px;
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px #0001;
+}
+
+.content__column p {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Stopka */
+footer {
+  background: #B2C2B4;
+  color: #222;
+  padding: 32px 0 16px 0;
+  margin-top: 40px;
+}
+
+.footer__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.footer__left,
+.footer__right {
+  flex: 1 1 200px;
+}
+
+.footer__title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.footer__text {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 4px;
+}
+
+.footer__divider {
+  height: 1px;
+  background: #ccc;
+  margin: 24px 0 12px 0;
+  width: 100%;
+}
+
+/* Nowa sekcja w stopce */
+.footer__down {
+  text-align: center;
+  font-size: 1rem;
+  color: #444;
+  margin-top: 12px;
+  padding-top: 8px;
+}
+
+.footer__down blockquote {
+  font-style: italic;
+  color: #555;
+  border-left: 4px solid #2b3240;
+  margin: 0 auto 12px auto;
+  padding: 8px 16px;
+  max-width: 400px;
+  background: #f8f8fa;
+}
+
+.footer__down a {
+  color: #2b3240;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.footer__down a:hover {
+  color: #1a1d26;
+}
+
+/* Responsywność */
+/* Dla ekranów do 900px szerokości (np. tablety, małe laptopy) */
+@media (max-width: 900px) {
+  .content__row {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+  .content__column {
+    max-width: 95%;
+    width: 100%;
+  }
+}
+
+/* Dla ekranów do 600px szerokości (smartfony) */
+@media (max-width: 600px) {
+  /* Nagłówek */
+  .header__content {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .header__logo {
+    height: 36px; /* Mniejsze logo */
+  }
+  .header__title {
+    font-size: 1.1rem; /* Mniejszy tytuł */
+    text-align: left;
+  }
+  .header__subtitle {
+    font-size: 0.9rem; /* Mniejszy podtytuł */
+  }
+
+  /* Główna treść */
+  .content__column {
+    padding: 1.2rem 0.5rem; /* Mniejsze odstępy wewnątrz kolumn */
+  }
+  .content__column p {
+    font-size: 1rem; /* Mniejszy tekst w akapitach */
+  }
+  .container {
+    padding: 0 4px; /* Mniejsze boczne odstępy */
+  }
+
+  /* Stopka */
+  .footer__content {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  .footer__down blockquote {
+    max-width: 100%;
+    padding: 8px 8px;
+  }
+  .footer__down a {
+    padding: 8px 0;
+    display: inline-block; /* Większa powierzchnia klikalna linków */
+  }
+}
